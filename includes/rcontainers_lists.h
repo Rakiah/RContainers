@@ -6,7 +6,7 @@
 /*   By: bkabbas <bkabbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/27 22:50:00 by bkabbas           #+#    #+#             */
-/*   Updated: 2016/06/10 02:10:14 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/06/28 20:20:36 by Rakiah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,28 +77,34 @@ void	**list_to_array_range(t_list *list, int start, int end);
 ** or reset it by yourself if you know what you're doing
 */
 void	list_remove_range(t_list *list, int start, int end);
-void	list_remove_range_inner(t_list *l, int st, int ed, void (*f)(t_node *));
+void	list_remove_range_inner(t_list *l, int st, int ed, void (*f)(void *));
 /*
 ** remove on an adress equality means it will not work (and can't) if you try to
 ** remove some nodes that have the same value, but different memory adress
 */
 void	list_remove_value(t_list *list, void *data);
-void	list_remove_value_inner(t_list *list, void *data, void (*f)(t_node *));
+void	list_remove_value_inner(t_list *list, void *data, void (*f)(void *));
 /*
 ** remove at the given index (first node is 0, last node is list->count)
 */
 void	list_remove(t_list *list, int index);
-void	list_remove_inner(t_list *list, int index, void (*f)(t_node *));
+void	list_remove_inner(t_list *list, int index, void (*f)(void *));
 /*
 ** clear the whole list, and delete every node, this method is more optimized
 ** that doing a remove range from 0 to count
 */
 void	list_clear(t_list *list);
-void	list_clear_inner(t_list *list, void (*f)(t_node *));
+void	list_clear_inner(t_list *list, void (*f)(void *));
+/*
+** clear the whole list, delete every node, and free list
+*/
+void	list_delete(t_list *list);
+void	list_delete_inner(t_list *list, void (*f)(void *));
 /*
 ** default functor for inner removing method, just free the data inside the node
 */
-void	list_default_remove_functor(t_node *n);
+void	list_default_remove_functor(void *n);
+
 /*
 ** list processor, send data inside the functor
 */

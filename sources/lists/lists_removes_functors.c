@@ -6,7 +6,7 @@
 /*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/10 02:08:58 by Rakiah            #+#    #+#             */
-/*   Updated: 2016/06/10 02:09:05 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/06/28 20:16:38 by Rakiah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	list_remove_range_inner(t_list *list,
 								int start,
 								int end,
-								void (*f)(t_node *))
+								void (*f)(void *))
 {
 	t_node *start_node;
 	t_node *start_node_minus;
@@ -30,7 +30,7 @@ void	list_remove_range_inner(t_list *list,
 	while (iterator != end_node && (tmp = iterator))
 	{
 		iterator = iterator->next;
-		f(tmp);
+		f(tmp->data);
 		free(tmp);
 		list->count--;
 	}
@@ -44,7 +44,7 @@ void	list_remove_range_inner(t_list *list,
 		list->end = start_node_minus;
 }
 
-void	list_remove_value_inner(t_list *list, void *data, void (*f)(t_node *))
+void	list_remove_value_inner(t_list *list, void *data, void (*f)(void *))
 {
 	t_node *prev;
 	t_node *next;
@@ -61,12 +61,12 @@ void	list_remove_value_inner(t_list *list, void *data, void (*f)(t_node *))
 		next->prev = prev;
 	else
 		list->end = prev;
-	f(removed);
+	f(removed->data);
 	free(removed);
 	list->count--;
 }
 
-void	list_remove_inner(t_list *list, int index, void (*f)(t_node *))
+void	list_remove_inner(t_list *list, int index, void (*f)(void *))
 {
 	t_node *prev;
 	t_node *next;
@@ -83,12 +83,12 @@ void	list_remove_inner(t_list *list, int index, void (*f)(t_node *))
 		next->prev = prev;
 	else
 		list->end = prev;
-	f(removed);
+	f(removed->data);
 	free(removed);
 	list->count--;
 }
 
-void	list_clear_inner(t_list *list, void (*f)(t_node *))
+void	list_clear_inner(t_list *list, void (*f)(void *))
 {
 	t_node	*iterator;
 	t_node	*tmp;
@@ -97,7 +97,7 @@ void	list_clear_inner(t_list *list, void (*f)(t_node *))
 	while (iterator != NULL)
 	{
 		tmp = iterator->next;
-		f(iterator);
+		f(iterator->data);
 		free(iterator);
 		iterator = tmp;
 	}
@@ -108,7 +108,18 @@ void	list_clear_inner(t_list *list, void (*f)(t_node *))
 	list->current = 0;
 }
 
-void	list_default_remove_functor(t_node *n)
+void	list_delete_inner(t_list *list, void (*f)(void *))
 {
-	free(n->data);
+	t_node	*iterator;
+	t_node	*tmp;
+
+	iterator = list->start;
+	while (iterator != NULL)
+	{
+		tmp = iterator->next;
+		f(iterator->data);
+		free(iterator);
+		iterator = tmp;
+	}
+	free(list);
 }

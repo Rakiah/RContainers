@@ -6,7 +6,7 @@
 /*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/10 02:08:58 by Rakiah            #+#    #+#             */
-/*   Updated: 2016/06/10 02:09:03 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/06/28 20:17:06 by Rakiah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,19 @@ void	list_clear(t_list *list)
 	list->iterator = NULL;
 	list->count = 0;
 	list->current = 0;
+}
+
+void	list_delete(t_list *list)
+{
+	t_node	*iterator;
+	t_node	*tmp;
+
+	iterator = list->start;
+	while (iterator != NULL)
+	{
+		tmp = iterator->next;
+		free(iterator);
+		iterator = tmp;
+	}
+	free(list);
 }

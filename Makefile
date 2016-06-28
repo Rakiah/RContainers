@@ -6,13 +6,13 @@
 #    By: bkabbas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/18 21:24:52 by bkabbas           #+#    #+#              #
-#    Updated: 2016/06/13 19:45:36 by Rakiah           ###   ########.fr        #
+#    Updated: 2016/06/28 20:20:45 by Rakiah           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = librcontainers.a
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra
 OPTIMIZE = yes
 PROF = no
 DEBUG = no
@@ -50,6 +50,7 @@ LISTS	+=	lists_converters.c
 LISTS	+=	lists_iterators.c
 LISTS	+=	lists_removes_functors.c
 LISTS	+=	lists_process_functors.c
+LISTS	+=	lists_functors.c
 
 ARRAYS	+=	arrays_inits.c
 
