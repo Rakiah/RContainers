@@ -6,13 +6,13 @@
 /*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/10 02:08:58 by Rakiah            #+#    #+#             */
-/*   Updated: 2016/06/10 02:09:03 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/06/29 14:53:35 by Rakiah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <rcontainers_lists.h>
 
-t_list	*list_new(size_t elem_size)
+t_list	*list_new(void)
 {
 	t_list *ret;
 
@@ -22,7 +22,6 @@ t_list	*list_new(size_t elem_size)
 	ret->iterator = NULL;
 	ret->count = 0;
 	ret->current = 0;
-	ret->elem_size = elem_size;
 	return (ret);
 }
 

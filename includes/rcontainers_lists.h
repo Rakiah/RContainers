@@ -6,7 +6,7 @@
 /*   By: bkabbas <bkabbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/27 22:50:00 by bkabbas           #+#    #+#             */
-/*   Updated: 2016/06/28 20:20:36 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/06/29 15:00:05 by Rakiah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 ** create the list and return it, the elem_size is purely informational
 ** and can be set to 0 without affecting how the list work
 */
-t_list	*list_new(size_t elem_size);
+t_list	*list_new(void);
 /*
 ** create a node at the end of the list and return it
 */

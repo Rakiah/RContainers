@@ -6,7 +6,7 @@
 /*   By: bkabbas <bkabbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/27 22:50:00 by bkabbas           #+#    #+#             */
-/*   Updated: 2016/06/10 02:10:48 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/06/29 14:51:13 by Rakiah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ struct		s_list
 	t_node	*end;
 	t_node	*iterator;
 	size_t	count;
-	size_t	elem_size;
 	int		current;
 };
 
