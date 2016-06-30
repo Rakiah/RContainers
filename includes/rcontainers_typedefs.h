@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rlists_typedefs.h                                  :+:      :+:    :+:   */
+/*   rcontainers_typedefs.h                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkabbas <bkabbas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/27 22:50:00 by bkabbas           #+#    #+#             */
-/*   Updated: 2016/06/10 02:10:02 by Rakiah           ###   ########.fr       */
+/*   Created: 2016/06/30 12:11:06 by Rakiah            #+#    #+#             */
+/*   Updated: 2016/06/30 12:11:19 by bkabbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RLISTS_TYPEDEFS_H
-# define RLISTS_TYPEDEFS_H
+#ifndef RCONTAINERS_TYPEDEFS_H
+# define RCONTAINERS_TYPEDEFS_H
 
 typedef struct s_array	t_array;
 typedef struct s_list	t_list;

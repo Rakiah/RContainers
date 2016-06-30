@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rlists_structs.h                                   :+:      :+:    :+:   */
+/*   rcontainers_structs.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkabbas <bkabbas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/27 22:50:00 by bkabbas           #+#    #+#             */
-/*   Updated: 2016/06/29 14:51:13 by Rakiah           ###   ########.fr       */
+/*   Created: 2016/06/30 12:11:32 by Rakiah            #+#    #+#             */
+/*   Updated: 2016/06/30 12:11:43 by bkabbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RLISTS_STRUCTS_H
-# define RLISTS_STRUCTS_H
+#ifndef RCONTAINERS_STRUCTS_H
+# define RCONTAINERS_STRUCTS_H
 
 struct		s_node
 {
