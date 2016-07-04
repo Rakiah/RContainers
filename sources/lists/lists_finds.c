@@ -6,7 +6,7 @@
 /*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/10 02:08:58 by Rakiah            #+#    #+#             */
-/*   Updated: 2016/06/10 02:09:03 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/07/04 22:54:58 by Rakiah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ void	*list_get_data_at(t_list *list, int index)
 {
 	t_node *node;
 
+	if (index < 0 || index >= (int)list->count)
+		return (NULL);
 	if (index < (int)list->count / 2)
 	{
 		node = list->start;
