@@ -6,7 +6,7 @@
 #    By: bkabbas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/18 21:24:52 by bkabbas           #+#    #+#              #
-#    Updated: 2016/06/28 20:20:45 by Rakiah           ###   ########.fr        #
+#    Updated: 2016/07/09 19:38:36 by Rakiah           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,9 @@ PATH_SRC = sources
 PATH_SUB = lists arrays
 PATH_OBJ = objects
 
+
+CFLAGS += -I $(PATH_HEADERS)
+
 # Debug
 ifeq ($(DEBUG), yes)
 	CFLAGS += -g -O0
@@ -37,8 +40,6 @@ endif
 ifeq ($(OPTIMIZE), yes)
 	CFLAGS += -O3
 endif
-
-CFLAGS += -I
 
 # Sources
 vpath %.c $(addprefix $(PATH_SRC)/,$(PATH_SUB))
@@ -78,7 +79,7 @@ $(NAME): $(OBJECTS)
 
 $(OBJECTS): $(HEADERS) | $(PATH_OBJ)
 $(OBJECTS): $(PATH_OBJ)/%.o: %.c
-	$(CC) $(CFLAGS) $(PATH_HEADERS) -o $@ -c $<
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 $(PATH_OBJ):
 	@-mkdir -p $@
